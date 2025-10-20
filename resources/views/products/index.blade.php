@@ -1,4 +1,4 @@
-@include('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +71,7 @@
 {{-- <link rel="stylesheet" href="{{asset('index.css')}}"> --}}
 </head>
 
-@section('content')
+
 <body>
     <div id="top">
         <h6>FREE SHIPPING ON ORDER OVER NRs. 2000</h6>
@@ -107,6 +107,6 @@
 
 </body>
 
-@endsection
+
 
 </html>

@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 //Authentication
 Route::get('/login',[AuthController::class,'showLogin']);
+Route::get('/register',[AuthController::class,'showRegister']);
 
 //Products
 Route::get('/products',[ProductController::class,'index'])->name('home');
