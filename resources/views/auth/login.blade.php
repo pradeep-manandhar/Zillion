@@ -72,25 +72,30 @@
 
         <div id="form">
 
-            <form action="">
+            <form action="{{route('login.post')}}" method="POST">
 
                 @csrf
                 <h1>USER LOGIN</h1>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email address">
                 </div>
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password ">
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter your password ">
                 </div>
 
                 <div id="login_btn">
                     <div>
                     <a href="">Forgot Password?</a>
-                </div>
-                    <button type="button" class="btn btn-primary">Login</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    @if(session('error'))
+                        <div class="alert alert-danger mt-3">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                 </div>
 
             </form>

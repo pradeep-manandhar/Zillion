@@ -40,39 +40,54 @@
 <body>
     <div id="form">
         <h1>Registration Form</h1>
-        <form action="">
+        <form action="{{route('register.store')}}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="fullname" class="form-label">Fullname</label>
-                    <input type="text" class="form-control" id="fullname" placeholder="Please Enter your fullname">
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Please Enter your fullname" value="{{old('fullname')}}">
+                    @error('fullname')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Please Enter your username">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Please Enter your username" value="{{old('username')}}">
+                    @error('username')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email"
-                        placeholder="Please Enter your email address">
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="Please Enter your email address" value="{{old('email')}}">
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label for="number" class="form-label">Mobile number </label>
-                    <input type="number" class="form-control" id="number"
-                        placeholder="Please Enter your mobile number ">
+                    <input type="number" class="form-control" id="number" name="number"
+                        placeholder="Please Enter your mobile number " value="{{old('number')}}">
+                    @error('number')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Please Enter your password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Please Enter your password" value="{{old('password')}}">
+                    @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label for="cpassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="cpassword"
+                    <label for="password_confirmation" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" value="{{old('password_confirmation')}}"
                         placeholder="Please Enter your password again">
                 </div>
             </div>
@@ -96,11 +111,13 @@
             </div>
 
             <div class="mb-3">
-                <button type="button" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
-
-
-
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </form>
     </div>
 </body>
