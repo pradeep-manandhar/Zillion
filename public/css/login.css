@@ -1,0 +1,31 @@
+      body {
+          background: linear-gradient(to right, rgb(45, 2, 238), rgb(199, 3, 234));
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+
+      #container {
+          display: grid;
+          margin: 200px;
+          height: 100vh;
+          grid-template-columns: 2fr 1fr;
+          justify-content: center;
+          align-items: center;
+      }
+
+      #form {
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          height: 100vh;
+      }
+
+      .btn {
+          background: linear-gradient(to right, rgb(45, 2, 238), rgb(199, 3, 234));
+          margin: 5px;
+      }
+
+      a {
+          text-decoration: none;
+      }

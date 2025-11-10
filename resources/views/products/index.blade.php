@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,39 +8,6 @@
     <title>Zillion - Feel It</title>
 
     <style>
-        #top {
-            background-color: blueviolet;
-            color: white;
-            height: 2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-        }
-
-        #logo {
-            /* margin-right: 60em; */
-            margin: 0em 35em 0em 10em;
-        }
-
-        #nav_bar {
-            display: flex;
-            height: 5em;
-            background-color: rgb(255, 255, 255);
-            padding: 10px;
-        }
-
-        .nav {
-            width: 500px;
-            margin-right: 2em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav_items:hover{
-            color:blueviolet;;
-        }
-
         #body {
             background-image: url('{{ asset('images/cloth.jpg') }}');
             background-size: cover;
@@ -51,15 +17,6 @@
             width: 100%;
         }
 
-        #content {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin: 0em 0em 0em 5em;
-            padding-top: 2em;
-        }
-
-        .btn {
-            margin: 5em 0 0 5em;
-        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -67,9 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-{{-- <link rel="stylesheet" href="{{asset('index.css')}}"> --}}
-</head>
+
 
 
 <body>
@@ -82,7 +39,16 @@
         </div>
         <div class="nav">
             <div class="nav_items"> Fashion </div>
-            <div class="nav_items"> Shop </div>
+
+            <div class="nav_items dropdown">
+                Shop
+                <div class="dropdown_menu">
+                    <a href="{{ url('/shop/men') }}">Men</a>
+                    <a href="{{ url('/shop/women') }}">Women</a>
+                    <a href="{{ url('/shop/kids') }}">Kids</a>
+                </div>
+            </div>
+
             <div class="nav_items"> Blog </div>
             <div class="nav_items"> Contact </div>
             <div class="nav_items"> <i class="fa-solid fa-magnifying-glass"></i> </div>
@@ -102,11 +68,6 @@
         </div>
         <button type="button" class="btn btn-primary">SHOP NOW</button>
     </div>
-
-
-
 </body>
-
-
 
 </html>

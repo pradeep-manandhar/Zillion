@@ -1,10 +1,9 @@
-@section('nav')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zillion - Feel It</title>
-
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
         #top {
             background-color: blueviolet;
@@ -35,8 +34,10 @@
             justify-content: space-between;
             align-items: center;
         }
-        .nav_items:hover{
-            color:blueviolet;;
+
+        .nav_items:hover {
+            color: blueviolet;
+            ;
         }
 
         #body {
@@ -57,6 +58,41 @@
         .btn {
             margin: 5em 0 0 5em;
         }
+        .nav_items {
+            position: relative;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown_menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            min-width: 150px;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .dropdown_menu a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .dropdown_menu a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown_menu {
+            display: block;
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -65,8 +101,37 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
 </head>
-{{-- <link rel="stylesheet" href="{{asset('index.css')}}"> --}}
-</head>
-@endsection
+
+<body>
+<div id="top">
+        <h6>FREE SHIPPING ON ORDER OVER NRs. 2000</h6>
+    </div>
+    <div id="nav_bar">
+        <div id="logo">
+            <img src="{{ asset('images/logo.jpg') }}" alt="Zillion logo" width="60px" height="60px">
+        </div>
+        <div class="nav">
+            <div class="nav_items"> Fashion </div>
+
+            <div class="nav_items dropdown">
+                Shop
+                <div class="dropdown_menu">
+                    <a href="{{ url('/shop/men') }}">Men</a>
+                    <a href="{{ url('/shop/women') }}">Women</a>
+                    <a href="{{ url('/shop/kids') }}">Kids</a>
+                </div>
+            </div>
+
+            <div class="nav_items"> Blog </div>
+            <div class="nav_items"> Contact </div>
+            <div class="nav_items"> <i class="fa-solid fa-magnifying-glass"></i> </div>
+            <div class="nav_items"> <i class="fa-regular fa-heart"></i></div>
+            <div class="nav_items"> <i class="fa-regular fa-user"></i> </div>
+            <div class="nav_items"> <i class="fa-solid fa-cart-plus"></i> </div>
+        </div>
+
+    </div>
+</body>
+
 
 @yield('content')

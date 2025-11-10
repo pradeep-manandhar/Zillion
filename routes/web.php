@@ -17,3 +17,17 @@ Route::post('/register',[AuthController::class,'store'])->name('register.store')
 //Products
 Route::get('/products',[ProductController::class,'index'])->name('home');
 
+//Shop dropdown
+Route::get('/shop/men', function () {
+    return view('shop.men');
+});
+
+Route::get('/shop/women', function () {
+    return view('shop.women');
+});
+
+Route::get('/shop/kids', function () {
+    return view('shop.kids');
+});
+
+

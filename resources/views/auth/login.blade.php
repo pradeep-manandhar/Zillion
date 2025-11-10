@@ -8,19 +8,6 @@
     <title>Login Page</title>
     <style>
 
-        body{
-            background: linear-gradient(to right, rgb(45, 2, 238), rgb(199, 3, 234));
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-        }
-        #container {
-            display: grid;
-            margin: 200px;
-            height: 100vh;
-            grid-template-columns: 2fr 1fr;
-            justify-content: center;
-            align-items: center;
-
-        }
 
         #content {
             display: flex;
@@ -37,28 +24,9 @@
 
         }
 
-        #form {
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            height: 100vh;
-        }
-
-        .login_btn{
-
-        }
-        .btn{
-            background: linear-gradient(to right, rgb(45, 2, 238), rgb(199, 3, 234));
-            margin: 5px;
-        }
-
-
-        a{
-            text-decoration: none;
-        }
     </style>
+
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
