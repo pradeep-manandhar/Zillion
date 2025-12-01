@@ -1,0 +1,42 @@
+.sidebar{
+    width: 220px;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  padding-top: 1rem;
+  margin-left: 11rem;
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  overflow-y: auto;
+}
+.sidebar a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    padding: 5px;
+}
+
+.sidebar a.active, .sidebar a:hover{
+    color:blueviolet;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background: blueviolet;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #d5b3ff; /* light violet track */
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: blueviolet;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #d5b3ff;
+}
+
+.btn-primary{
+    color:blueviolet;
+}
