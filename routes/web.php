@@ -31,3 +31,9 @@ Route::get('/shop/kids', function () {
 });
 
 
+Route::get('/dashboard', function(){
+    return view('admin.dashboard');
+});
+
+//Products
+Route::get('/products/index', [ProductController::class,'index_page'])->name('product.index');
